@@ -11,7 +11,8 @@ import SwiftUI
 struct ChatUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            Login(emailAddress: .constant(""), password: .constant(""))
+            TabBarView()
         }
     }
 }
