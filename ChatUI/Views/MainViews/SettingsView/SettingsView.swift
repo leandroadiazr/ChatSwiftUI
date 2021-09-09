@@ -11,11 +11,15 @@ struct SettingsView: View {
     var body: some View {
         
         ZStack {
-            Color(.quaternaryLabel)
+            Color(.systemGray5)
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 60) {
                 //MARK:- HEADER
-                SettingsHeaderView()
+                NavigationLink(
+                    destination: ProfileView(),
+                    label: {
+                        SettingsHeaderView()
+                    })
                 
 
                 VStack {

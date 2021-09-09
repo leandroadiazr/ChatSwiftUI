@@ -28,6 +28,10 @@
 		03D72C4026E806D900B9F915 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3F26E806D900B9F915 /* HomeView.swift */; };
 		03D72C4226E80EF300B9F915 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C4126E80EF300B9F915 /* SettingsHeaderView.swift */; };
 		03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C4326E8102800B9F915 /* SettingsViewCell.swift */; };
+		03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFBC26E9276000EA96C6 /* ProfileView.swift */; };
+		03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFBF26E9294800EA96C6 /* ProfileImageView.swift */; };
+		03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */; };
+		03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFC426E97EC600EA96C6 /* StatusViewModel.swift */; };
 		E8145CD326E8254E008D0FCF /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,10 @@
 		03D72C3F26E806D900B9F915 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		03D72C4126E80EF300B9F915 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		03D72C4326E8102800B9F915 /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		03FCDFBC26E9276000EA96C6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		03FCDFBF26E9294800EA96C6 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
+		03FCDFC426E97EC600EA96C6 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +137,7 @@
 			children = (
 				0324956126E677B900F629B3 /* Model */,
 				0324956226E677BA00F629B3 /* Views */,
+				03FCDFBE26E9292E00EA96C6 /* ImageViews */,
 				0324956326E677BB00F629B3 /* ViewModel */,
 				0324956426E677BB00F629B3 /* Utils */,
 				0324953626E677A600F629B3 /* ChatUIApp.swift */,
@@ -188,6 +197,7 @@
 		0324956326E677BB00F629B3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				03FCDFC326E97EB200EA96C6 /* StatusViewModel */,
 				E8145CD126E82533008D0FCF /* SettingsViewModel */,
 			);
 			path = ViewModel;
@@ -248,6 +258,7 @@
 		03D72C3726E8053600B9F915 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				E8145CD426E82B2C008D0FCF /* ProfileView */,
 				03D72C3A26E806B300B9F915 /* SettingsView */,
 				03D72C3926E806AC00B9F915 /* ChatView */,
 				03D72C3826E806A500B9F915 /* HomeView */,
@@ -282,12 +293,37 @@
 			path = SettingsView;
 			sourceTree = "<group>";
 		};
+		03FCDFBE26E9292E00EA96C6 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				03FCDFBF26E9294800EA96C6 /* ProfileImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		03FCDFC326E97EB200EA96C6 /* StatusViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03FCDFC426E97EC600EA96C6 /* StatusViewModel.swift */,
+			);
+			path = StatusViewModel;
+			sourceTree = "<group>";
+		};
 		E8145CD126E82533008D0FCF /* SettingsViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */,
 			);
 			path = SettingsViewModel;
+			sourceTree = "<group>";
+		};
+		E8145CD426E82B2C008D0FCF /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				03FCDFBC26E9276000EA96C6 /* ProfileView.swift */,
+				03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,11 +467,15 @@
 				03D72C4226E80EF300B9F915 /* SettingsHeaderView.swift in Sources */,
 				0324957826E6BDCD00F629B3 /* PasswordField.swift in Sources */,
 				0324953926E677A600F629B3 /* ContentView.swift in Sources */,
+				03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */,
 				0324953726E677A600F629B3 /* ChatUIApp.swift in Sources */,
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
 				03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */,
+				03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */,
+				03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */,
 				0324957026E6BB3D00F629B3 /* AppleButton.swift in Sources */,
+				03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */,
 				03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

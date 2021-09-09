@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum SettingsCellViewModel: Int, CaseIterable {
-case account
+    case account
     case notifications
     case starredMessages
     
