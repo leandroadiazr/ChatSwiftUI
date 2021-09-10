@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProfileImageView: View {
-    var imageName: String
+    var imageName: Image
     var body: some View {
         HStack {
-            Image(systemName: imageName)
+            imageName
                 .resizable()
                 .scaledToFit()
-                .frame(width: 64, height: 64)
+                .frame(width: 84, height: 84)
                 .clipShape(Circle())
                 .padding()
             }
@@ -26,6 +26,6 @@ struct ProfileImageView: View {
 
 struct ProfileImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileImageView(imageName: "person")
+        ProfileImageView(imageName: Image(systemName: "person"))
     }
 }

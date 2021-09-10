@@ -10,6 +10,15 @@ import SwiftUI
 struct ProfileView: View {
     @State private var fullName: String = ""
     @ObservedObject var viewModel = StatusChanged()
+    @State private var showImagePicker = true
+    @State private var selectedImage: UIImage?
+    @State private var profileImage = Image(systemName: "person")
+    
+    private func loadSelectedImage() {
+        guard let selectedImage = selectedImage else { return }
+        profileImage = Image(uiImage: selectedImage)  
+    }
+    
     
     var body: some View {
         ZStack {
@@ -20,16 +29,24 @@ struct ProfileView: View {
                     
                     //MARK:- PROFILE IMAGE, EDIT, DESCRIPTION
                     HStack{
+                        //MARK:- PROFILE IMAGE
                         VStack {
-                            ProfileImageView(imageName: "person")
+                            ProfileImageView(imageName: profileImage)
                                 .frame(width: 90, height: 90, alignment: .center)
                                 .border(Color.black, width: 1)
+                            
+                            //MARK:- EDIT BUTTON
                             Button(action: {
-                                
+                                showImagePicker.toggle()
                             }, label: {
                                 Text("Edit")
                                     .bold()
                             })
+                            .sheet(isPresented: $showImagePicker, onDismiss: loadSelectedImage, content: {
+                                SwiftUIImagePicker(image: $selectedImage)
+                               
+                            })
+                              
                         }
                         Text("Enter your name and add an optional profile picture")
                             .font(.footnote)
@@ -59,7 +76,7 @@ struct ProfileView: View {
                                 label: {
                                     StatusCell(status: viewModel.status)
                                     //        Text(viewModel.status.title)
-                                    //            .bold()
+//                                                .bold()
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 })
@@ -84,8 +101,3 @@ struct ProfileView_Previews: PreviewProvider {
     }
 }
 
-//struct ExtractedView: View {
-//    var body: some View {
-
-//    }
-//}
