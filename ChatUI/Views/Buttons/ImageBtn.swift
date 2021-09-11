@@ -21,9 +21,12 @@ struct ImageBtn: View {
             action()
         }, label: {
             Image(systemName: imageName)
+                .resizable()
+                .scaledToFit()
                 .font(fontSize)
                 .foregroundColor(foregroundColor)
                 .background(backgroundColor)
+                .padding()
                 
             Text(title)
                 .foregroundColor(foregroundColor)

@@ -9,19 +9,29 @@ import SwiftUI
 
 struct ProfileImageView: View {
     var imageName: Image
+    var frameWidth: CGFloat = 84
+    var frameHeight: CGFloat = 84
+    var backgroundColor: Color = .white
+    
+  
+    
     var body: some View {
         HStack {
             imageName
                 .resizable()
                 .scaledToFit()
-                .frame(width: 84, height: 84)
+                .frame(width: frameWidth, height: frameHeight)
                 .clipShape(Circle())
                 .padding()
             }
+        .frame(width: frameWidth, height: frameHeight)
         .padding(.horizontal)
-//        .frame(height: 90)
-        .background(Color.white)
+
+        .background(backgroundColor)
     }
+    
+
+    
 }
 
 struct ProfileImageView_Previews: PreviewProvider {

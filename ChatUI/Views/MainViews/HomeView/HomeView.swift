@@ -6,10 +6,59 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct HomeView: View {
+    @State private var showNewMessageView = false
+//    @Binding var searchMessage: String
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .bottomTrailing) {
+            Color(.systemGray5)
+                .edgesIgnoringSafeArea(.all)
+            
+            
+            ScrollView {
+                VStack(alignment: .leading) {
+                    
+                    ForEach(0 ... 20, id: \.self) { conversation in
+                        HStack {
+                            ConversationCell(userName: "leandro a diaz", message: "this is just a message")
+                            Spacer()
+                        }
+                        .padding(6)
+                        Divider()
+                            .background(Color.red)
+                    }
+                    
+                }
+                .padding(.top, 20)
+                Spacer()
+            }
+            
+            
+            
+            //MARK:-Floting Button
+            HStack {
+                Spacer()
+                Button(action: {
+                    showNewMessageView.toggle()
+                }, label: {
+                    Image(systemName: "square.and.pencil")
+                })
+                .frame(width: 44, height: 44)
+                .background(Color.blue)
+                .clipShape(Circle())
+                .foregroundColor(.white)
+                .padding()
+                .sheet(isPresented: $showNewMessageView, content: {
+                    NewMessagesView()
+                })
+            }
+            .padding()
+        }
+        
     }
 }
 

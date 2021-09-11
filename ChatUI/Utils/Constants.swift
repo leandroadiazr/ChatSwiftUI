@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Kingfisher
 
 enum Constants {
     static let screenSize = UIScreen.main.bounds
@@ -15,7 +16,10 @@ enum Constants {
 enum Images {
     static let Logo                 = UIImage(systemName: "person")
     static let Avatar               = "emptyAvatar"//UIImage(systemName: "person.circle")
-    static let profilePic           = "headShot"//UIImage(named: "headShot")
+    static let profilePic           =  KFImage( URL(string: "https://picsum.photos/200/300")!)//UIImage(named: "headShot")
+    
+  
+    
 //    static let followPlus           = UIImage(systemName: "person.crop.circle.fill.badge.plus")?.withTintColor(CustomColors.CustomRed)
     
     //MARK:- CUSTOMIZED BUTTONS

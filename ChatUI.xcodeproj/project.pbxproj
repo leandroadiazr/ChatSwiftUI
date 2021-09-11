@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,11 @@
 		03D72C4026E806D900B9F915 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3F26E806D900B9F915 /* HomeView.swift */; };
 		03D72C4226E80EF300B9F915 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C4126E80EF300B9F915 /* SettingsHeaderView.swift */; };
 		03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C4326E8102800B9F915 /* SettingsViewCell.swift */; };
+		03FBD10E26EC2CFD0028483D /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBD10D26EC2CFD0028483D /* ConversationCell.swift */; };
+		03FBD11126EC34720028483D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03FBD11026EC34720028483D /* Kingfisher */; };
+		03FBD11326EC3BDA0028483D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBD11226EC3BDA0028483D /* UserCell.swift */; };
+		03FBD11626EC3DCD0028483D /* NewMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBD11526EC3DCD0028483D /* NewMessagesView.swift */; };
+		03FBD11926EC3F9B0028483D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBD11826EC3F9B0028483D /* SearchBarView.swift */; };
 		03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFBC26E9276000EA96C6 /* ProfileView.swift */; };
 		03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFBF26E9294800EA96C6 /* ProfileImageView.swift */; };
 		03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */; };
@@ -82,6 +87,10 @@
 		03D72C3F26E806D900B9F915 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		03D72C4126E80EF300B9F915 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		03D72C4326E8102800B9F915 /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		03FBD10D26EC2CFD0028483D /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		03FBD11226EC3BDA0028483D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		03FBD11526EC3DCD0028483D /* NewMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessagesView.swift; sourceTree = "<group>"; };
+		03FBD11826EC3F9B0028483D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		03FCDFBC26E9276000EA96C6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		03FCDFBF26E9294800EA96C6 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FBD11126EC34720028483D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +197,7 @@
 		0324956226E677BA00F629B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03FBD11726EC3F870028483D /* SearchBar */,
 				03B1FD4126EBC763005FE088 /* ImagePicker */,
 				03D72C3726E8053600B9F915 /* MainViews */,
 				0324956E26E6A54100F629B3 /* Buttons */,
@@ -269,6 +280,7 @@
 		03D72C3726E8053600B9F915 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				03FBD11426EC3DBC0028483D /* MessagesView */,
 				E8145CD426E82B2C008D0FCF /* ProfileView */,
 				03D72C3A26E806B300B9F915 /* SettingsView */,
 				03D72C3926E806AC00B9F915 /* ChatView */,
@@ -282,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				03D72C3F26E806D900B9F915 /* HomeView.swift */,
+				03FBD11226EC3BDA0028483D /* UserCell.swift */,
+				03FBD10D26EC2CFD0028483D /* ConversationCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -302,6 +316,22 @@
 				03D72C4326E8102800B9F915 /* SettingsViewCell.swift */,
 			);
 			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		03FBD11426EC3DBC0028483D /* MessagesView */ = {
+			isa = PBXGroup;
+			children = (
+				03FBD11526EC3DCD0028483D /* NewMessagesView.swift */,
+			);
+			path = MessagesView;
+			sourceTree = "<group>";
+		};
+		03FBD11726EC3F870028483D /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				03FBD11826EC3F9B0028483D /* SearchBarView.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		03FCDFBE26E9292E00EA96C6 /* ImageViews */ = {
@@ -353,6 +383,9 @@
 			dependencies = (
 			);
 			name = ChatUI;
+			packageProductDependencies = (
+				03FBD11026EC34720028483D /* Kingfisher */,
+			);
 			productName = ChatUI;
 			productReference = 0324953326E677A600F629B3 /* ChatUI.app */;
 			productType = "com.apple.product-type.application";
@@ -424,6 +457,9 @@
 				Base,
 			);
 			mainGroup = 0324952A26E677A600F629B3;
+			packageReferences = (
+				03FBD10F26EC34720028483D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 0324953426E677A600F629B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -474,20 +510,24 @@
 				0324956726E6780800F629B3 /* Login.swift in Sources */,
 				03D72C3E26E806D000B9F915 /* ChatView.swift in Sources */,
 				03B1FD4326EBC786005FE088 /* SwfitUIImagePicker.swift in Sources */,
+				03FBD10E26EC2CFD0028483D /* ConversationCell.swift in Sources */,
 				0324956926E6781300F629B3 /* SignUp.swift in Sources */,
 				0324957426E6BBE600F629B3 /* TitleView.swift in Sources */,
 				03D72C4226E80EF300B9F915 /* SettingsHeaderView.swift in Sources */,
 				0324957826E6BDCD00F629B3 /* PasswordField.swift in Sources */,
+				03FBD11326EC3BDA0028483D /* UserCell.swift in Sources */,
 				0324953926E677A600F629B3 /* ContentView.swift in Sources */,
 				03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */,
 				0324953726E677A600F629B3 /* ChatUIApp.swift in Sources */,
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
+				03FBD11926EC3F9B0028483D /* SearchBarView.swift in Sources */,
 				03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */,
 				03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */,
 				03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */,
 				0324957026E6BB3D00F629B3 /* AppleButton.swift in Sources */,
 				03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */,
+				03FBD11626EC3DCD0028483D /* NewMessagesView.swift in Sources */,
 				03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,6 +848,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03FBD10F26EC34720028483D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03FBD11026EC34720028483D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03FBD10F26EC34720028483D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0324952B26E677A600F629B3 /* Project object */;
 }
