@@ -24,6 +24,8 @@
 		0324957826E6BDCD00F629B3 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957726E6BDCD00F629B3 /* PasswordField.swift */; };
 		03835BD026EEA44C002104C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BCF26EEA44C002104C6 /* Extensions.swift */; };
 		03835BD226EEA870002104C6 /* CustomSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD126EEA870002104C6 /* CustomSearchBarView.swift */; };
+		03835BD426EEB35E002104C6 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD326EEB35E002104C6 /* ChatBubble.swift */; };
+		03835BD626EEBB8D002104C6 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD526EEBB8D002104C6 /* MessageView.swift */; };
 		03B1FD4326EBC786005FE088 /* SwfitUIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1FD4226EBC786005FE088 /* SwfitUIImagePicker.swift */; };
 		03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3526E8052E00B9F915 /* TabBarView.swift */; };
 		03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3B26E806C700B9F915 /* SettingsView.swift */; };
@@ -84,6 +86,8 @@
 		0324957726E6BDCD00F629B3 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		03835BCF26EEA44C002104C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		03835BD126EEA870002104C6 /* CustomSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarView.swift; sourceTree = "<group>"; };
+		03835BD326EEB35E002104C6 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		03835BD526EEBB8D002104C6 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		03B1FD4226EBC786005FE088 /* SwfitUIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwfitUIImagePicker.swift; sourceTree = "<group>"; };
 		03D72C3526E8052E00B9F915 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		03D72C3B26E806C700B9F915 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				03D72C3D26E806D000B9F915 /* ChatView.swift */,
+				03835BD326EEB35E002104C6 /* ChatBubble.swift */,
+				03835BD526EEBB8D002104C6 /* MessageView.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0324956D26E69BBB00F629B3 /* ImageBtn.swift in Sources */,
+				03835BD426EEB35E002104C6 /* ChatBubble.swift in Sources */,
 				E8145CD326E8254E008D0FCF /* SettingsCellViewModel.swift in Sources */,
 				0324956B26E67E5F00F629B3 /* Constants.swift in Sources */,
 				0324957226E6BB9D00F629B3 /* CustomSignInButton.swift in Sources */,
@@ -525,6 +532,7 @@
 				0324953926E677A600F629B3 /* ContentView.swift in Sources */,
 				03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */,
 				0324953726E677A600F629B3 /* ChatUIApp.swift in Sources */,
+				03835BD626EEBB8D002104C6 /* MessageView.swift in Sources */,
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
 				03FBD11926EC3F9B0028483D /* SearchBarView.swift in Sources */,

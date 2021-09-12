@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchBarView: View {
     @Binding var text: String
-    @State  var isEditing = true
+    @Binding  var isEditing: Bool
     @Binding  var isLoading: Bool
 
     var body: some View {
@@ -36,7 +36,7 @@ struct SearchBarView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                             .scaleEffect(1)
                     } else {
-                        ImageBtn(imageName: "xmark.circle", foregroundColor: .white, fontSize: .system(size: 14)) {
+                        ImageBtn(imageName: "xmark.circle", foregroundColor: .white, fontSize: .system(size: 10)) {
                             text = ""
                             isLoading = false
                         }
@@ -47,7 +47,7 @@ struct SearchBarView: View {
                     Button(action: {
                         isEditing = false
                         isLoading = false
-//                        hideKeyboard()
+                        hideKeyboard()
                     }, label: {
                         Text("Cancel")
                     })
@@ -64,7 +64,7 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(text: .constant(""), isLoading: .constant(false))
+        SearchBarView(text: .constant(""), isEditing: .constant(false), isLoading: .constant(false))
     }
 }
 

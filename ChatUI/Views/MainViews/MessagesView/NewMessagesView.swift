@@ -12,12 +12,14 @@ struct NewMessagesView: View {
     @Environment(\.presentationMode) var mode
     @State private var searchText = ""
     @State private var isEditing = false
-
+    @State private var isLoading = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
+                SearchBarView(text: $searchText, isEditing: $isEditing, isLoading: $isLoading)
                 
-                CustomSearchBarView(text: $searchText, isEditing: $isEditing)
+//                CustomSearchBarView(text: $searchText, isEditing: $isEditing)
                     .onTapGesture {
                         isEditing.toggle()
                     }
