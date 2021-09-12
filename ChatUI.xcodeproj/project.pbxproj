@@ -22,6 +22,8 @@
 		0324957426E6BBE600F629B3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957326E6BBE600F629B3 /* TitleView.swift */; };
 		0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957526E6BC7C00F629B3 /* CustomQuestionButton.swift */; };
 		0324957826E6BDCD00F629B3 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957726E6BDCD00F629B3 /* PasswordField.swift */; };
+		03835BD026EEA44C002104C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BCF26EEA44C002104C6 /* Extensions.swift */; };
+		03835BD226EEA870002104C6 /* CustomSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD126EEA870002104C6 /* CustomSearchBarView.swift */; };
 		03B1FD4326EBC786005FE088 /* SwfitUIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1FD4226EBC786005FE088 /* SwfitUIImagePicker.swift */; };
 		03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3526E8052E00B9F915 /* TabBarView.swift */; };
 		03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D72C3B26E806C700B9F915 /* SettingsView.swift */; };
@@ -80,6 +82,8 @@
 		0324957326E6BBE600F629B3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0324957526E6BC7C00F629B3 /* CustomQuestionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomQuestionButton.swift; sourceTree = "<group>"; };
 		0324957726E6BDCD00F629B3 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		03835BCF26EEA44C002104C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		03835BD126EEA870002104C6 /* CustomSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarView.swift; sourceTree = "<group>"; };
 		03B1FD4226EBC786005FE088 /* SwfitUIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwfitUIImagePicker.swift; sourceTree = "<group>"; };
 		03D72C3526E8052E00B9F915 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		03D72C3B26E806C700B9F915 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				0324956A26E67E5F00F629B3 /* Constants.swift */,
+				03835BCF26EEA44C002104C6 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				03FBD11826EC3F9B0028483D /* SearchBarView.swift */,
+				03835BD126EEA870002104C6 /* CustomSearchBarView.swift */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -527,8 +533,10 @@
 				03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */,
 				0324957026E6BB3D00F629B3 /* AppleButton.swift in Sources */,
 				03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */,
+				03835BD226EEA870002104C6 /* CustomSearchBarView.swift in Sources */,
 				03FBD11626EC3DCD0028483D /* NewMessagesView.swift in Sources */,
 				03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */,
+				03835BD026EEA44C002104C6 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

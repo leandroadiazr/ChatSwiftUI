@@ -10,13 +10,21 @@ import Kingfisher
 
 struct HomeView: View {
     @State private var showNewMessageView = false
-//    @Binding var searchMessage: String
+    @State private var showChatView = false
+    //    @Binding var searchMessage: String
     
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             Color(.systemGray5)
                 .edgesIgnoringSafeArea(.all)
+            
+            
+            NavigationLink(
+                destination: ChatView(),
+                isActive: $showChatView,
+                label: {  })
+            
             
             
             ScrollView {
@@ -53,7 +61,7 @@ struct HomeView: View {
                 .foregroundColor(.white)
                 .padding()
                 .sheet(isPresented: $showNewMessageView, content: {
-                    NewMessagesView()
+                    NewMessagesView(showChatView: $showChatView)
                 })
             }
             .padding()
