@@ -22,6 +22,9 @@
 		0324957426E6BBE600F629B3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957326E6BBE600F629B3 /* TitleView.swift */; };
 		0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957526E6BC7C00F629B3 /* CustomQuestionButton.swift */; };
 		0324957826E6BDCD00F629B3 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0324957726E6BDCD00F629B3 /* PasswordField.swift */; };
+		0326F2B126F7C5450095C929 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326F2B026F7C5450095C929 /* CustomInputView.swift */; };
+		0326F2B426F7C8B00095C929 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326F2B326F7C8B00095C929 /* Messages.swift */; };
+		0326F2B626F7C9920095C929 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326F2B526F7C9920095C929 /* ChatViewModel.swift */; };
 		03835BD026EEA44C002104C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BCF26EEA44C002104C6 /* Extensions.swift */; };
 		03835BD226EEA870002104C6 /* CustomSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD126EEA870002104C6 /* CustomSearchBarView.swift */; };
 		03835BD426EEB35E002104C6 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03835BD326EEB35E002104C6 /* ChatBubble.swift */; };
@@ -84,6 +87,9 @@
 		0324957326E6BBE600F629B3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		0324957526E6BC7C00F629B3 /* CustomQuestionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomQuestionButton.swift; sourceTree = "<group>"; };
 		0324957726E6BDCD00F629B3 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		0326F2B026F7C5450095C929 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		0326F2B326F7C8B00095C929 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		0326F2B526F7C9920095C929 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		03835BCF26EEA44C002104C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		03835BD126EEA870002104C6 /* CustomSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarView.swift; sourceTree = "<group>"; };
 		03835BD326EEB35E002104C6 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 		0324953526E677A600F629B3 /* ChatUI */ = {
 			isa = PBXGroup;
 			children = (
+				0326F2B226F7C8A10095C929 /* MockData */,
 				0324956126E677B900F629B3 /* Model */,
 				0324956226E677BA00F629B3 /* Views */,
 				03FCDFBE26E9292E00EA96C6 /* ImageViews */,
@@ -221,6 +228,7 @@
 			children = (
 				03FCDFC326E97EB200EA96C6 /* StatusViewModel */,
 				E8145CD126E82533008D0FCF /* SettingsViewModel */,
+				0326F2B526F7C9920095C929 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -254,6 +262,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		0326F2B226F7C8A10095C929 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				0326F2B326F7C8B00095C929 /* Messages.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		03B1FD4126EBC763005FE088 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				0324957326E6BBE600F629B3 /* TitleView.swift */,
+				0326F2B026F7C5450095C929 /* CustomInputView.swift */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -520,6 +537,7 @@
 				0324956B26E67E5F00F629B3 /* Constants.swift in Sources */,
 				0324957226E6BB9D00F629B3 /* CustomSignInButton.swift in Sources */,
 				03D72C4026E806D900B9F915 /* HomeView.swift in Sources */,
+				0326F2B626F7C9920095C929 /* ChatViewModel.swift in Sources */,
 				0324956726E6780800F629B3 /* Login.swift in Sources */,
 				03D72C3E26E806D000B9F915 /* ChatView.swift in Sources */,
 				03B1FD4326EBC786005FE088 /* SwfitUIImagePicker.swift in Sources */,
@@ -536,11 +554,13 @@
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
 				03FBD11926EC3F9B0028483D /* SearchBarView.swift in Sources */,
+				0326F2B126F7C5450095C929 /* CustomInputView.swift in Sources */,
 				03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */,
 				03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */,
 				03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */,
 				0324957026E6BB3D00F629B3 /* AppleButton.swift in Sources */,
 				03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */,
+				0326F2B426F7C8B00095C929 /* Messages.swift in Sources */,
 				03835BD226EEA870002104C6 /* CustomSearchBarView.swift in Sources */,
 				03FBD11626EC3DCD0028483D /* NewMessagesView.swift in Sources */,
 				03D72C3C26E806C700B9F915 /* SettingsView.swift in Sources */,

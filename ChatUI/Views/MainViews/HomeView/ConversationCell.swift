@@ -28,7 +28,7 @@ struct ConversationCell: View {
             }
             Spacer()
             Text(timeStamp)
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
                 .font(.footnote)
                 .padding(.horizontal)
 //            Spacer()

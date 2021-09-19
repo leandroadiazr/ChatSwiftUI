@@ -26,13 +26,19 @@ struct HomeView: View {
                 label: {  })
             
             
-            
+            //MARK:- Chats
             ScrollView {
                 VStack(alignment: .leading) {
                     
                     ForEach(0 ... 20, id: \.self) { conversation in
                         HStack {
-                            ConversationCell(userName: "leandro a diaz", message: "this is just a message")
+//                            ConversationCell(userName: "leandro a diaz", message: "this is just a message")
+                            NavigationLink(
+                                destination: ChatView(),
+                                label: {
+                                    ConversationCell()
+                                })
+                                .foregroundColor(.black)
                             Spacer()
                         }
                         .padding(6)

@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ChatView: View {
+    @State var inputText: String = ""
+    @ObservedObject var viewModel = ChatViewModel()
+    
+    
+    
     var body: some View {
-        Text("chat")
-            .navigationTitle("chat")
+        //MARK:- Main V Stack
+        VStack {
+            //MARK:-  Messages
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach(viewModel.messages) { message in
+                        MessageView(isFromCurrentUser: message.isFromCurrentUser, messageText: message.messageText)
+                    }
+                }
+            }
+            
+            // Input View
+            CustomInputView(inputText: $inputText, action: {
+                //
+            })
+        }
+        .navigationTitle("Chats")
+        .navigationBarTitleDisplayMode(.inline)
+        .padding(.vertical)
     }
 }
 

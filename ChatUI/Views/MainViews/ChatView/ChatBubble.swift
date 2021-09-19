@@ -16,10 +16,6 @@ struct ChatBubble: Shape {
         
         return Path(path.cgPath)
     }
-    
-//    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//    }
 }
 
 struct ChatBubble_Previews: PreviewProvider {
