@@ -205,6 +205,7 @@
 		0324956126E677B900F629B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0326F2B326F7C8B00095C929 /* Messages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,9 +213,9 @@
 		0324956226E677BA00F629B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03D72C3726E8053600B9F915 /* MainViews */,
 				03FBD11726EC3F870028483D /* SearchBar */,
 				03B1FD4126EBC763005FE088 /* ImagePicker */,
-				03D72C3726E8053600B9F915 /* MainViews */,
 				0324956E26E6A54100F629B3 /* Buttons */,
 				0324956526E677F700F629B3 /* AuthorizationViews */,
 				03D72C3226E8045E00B9F915 /* SharedViews */,
@@ -228,7 +229,7 @@
 			children = (
 				03FCDFC326E97EB200EA96C6 /* StatusViewModel */,
 				E8145CD126E82533008D0FCF /* SettingsViewModel */,
-				0326F2B526F7C9920095C929 /* ChatViewModel.swift */,
+				E8334E5D27068F8900BEEBDD /* ChatViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 		0326F2B226F7C8A10095C929 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
-				0326F2B326F7C8B00095C929 /* Messages.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -394,6 +394,14 @@
 				03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */,
 			);
 			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		E8334E5D27068F8900BEEBDD /* ChatViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0326F2B526F7C9920095C929 /* ChatViewModel.swift */,
+			);
+			path = ChatViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
