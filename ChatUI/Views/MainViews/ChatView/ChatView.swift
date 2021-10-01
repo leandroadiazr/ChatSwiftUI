@@ -10,9 +10,7 @@ import SwiftUI
 struct ChatView: View {
     @State var inputText: String = ""
     @ObservedObject var viewModel = ChatViewModel()
-    
-    
-    
+
     var body: some View {
         //MARK:- Main V Stack
         VStack {
@@ -27,12 +25,19 @@ struct ChatView: View {
             
             // Input View
             CustomInputView(inputText: $inputText, action: {
-                //
+//                viewModel.sendMessages(inputText)
+                sendMessage()
+                
             })
         }
         .navigationTitle("Chats")
         .navigationBarTitleDisplayMode(.inline)
         .padding(.vertical)
+        
+    }
+    func sendMessage() {
+        viewModel.sendMessages(inputText)
+        inputText = ""
     }
 }
 

@@ -15,6 +15,15 @@ class ChatViewModel: ObservableObject {
         messages = mockMessages
     }
     
+    
+    
+    func sendMessages(_ messageText: String) {
+        let message = Message(isFromCurrentUser: true, messageText: messageText)
+        messages.append(message)
+    }
+    
+    
+    
     var mockMessages: [Message] {
         
         [
