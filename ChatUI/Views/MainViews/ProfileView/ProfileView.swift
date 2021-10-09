@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State private var fullName: String = ""
     @ObservedObject var viewModel = StatusChanged()
-    @State private var showImagePicker = true
+    @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage = Image(systemName: "person")
     
@@ -18,7 +18,6 @@ struct ProfileView: View {
         guard let selectedImage = selectedImage else { return }
         profileImage = Image(uiImage: selectedImage)  
     }
-    
     
     var body: some View {
         ZStack {
@@ -44,9 +43,7 @@ struct ProfileView: View {
                             })
                             .sheet(isPresented: $showImagePicker, onDismiss: loadSelectedImage, content: {
                                 SwiftUIImagePicker(image: $selectedImage)
-                               
-                            })
-                              
+                            })     
                         }
                         Text("Enter your name and add an optional profile picture")
                             .font(.footnote)
