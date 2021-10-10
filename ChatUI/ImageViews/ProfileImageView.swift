@@ -11,7 +11,7 @@ struct ProfileImageView: View {
     var imageName: Image
     var frameWidth: CGFloat = 84
     var frameHeight: CGFloat = 84
-    var backgroundColor: Color = .white
+    var backgroundColor: Color = .clear
     
   
     
@@ -19,7 +19,7 @@ struct ProfileImageView: View {
         HStack {
             imageName
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(width: frameWidth, height: frameHeight)
                 .clipShape(Circle())
                 .padding()
@@ -36,6 +36,7 @@ struct ProfileImageView: View {
 
 struct ProfileImageView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ProfileImageView(imageName: Image(systemName: "person"))
     }
 }
