@@ -17,8 +17,8 @@ struct ChatUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            Login(emailAddress: .constant(""), password: .constant(""))
-            TabBarView()
+            SignUp()
+//            TabBarView()
         }
     }
 }

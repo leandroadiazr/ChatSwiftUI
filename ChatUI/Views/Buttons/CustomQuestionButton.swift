@@ -19,7 +19,7 @@ struct CustomQuestionButton: View {
             Text(question)
                 .font(.body)
             NavigationLink(
-                destination: SignUp(name: .constant(""), emailAddress: $emailAddress, password: $password, passwordTwo: .constant("")),
+                destination: SignUp(),
                 label: {
                     Text(answer)
                 })

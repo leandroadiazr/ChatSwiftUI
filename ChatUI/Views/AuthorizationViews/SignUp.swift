@@ -9,11 +9,13 @@ import SwiftUI
 import AuthenticationServices
 
 struct SignUp: View {
-    @Binding var name: String
-    @Binding var emailAddress: String
-    @Binding var password: String
-    @Binding var passwordTwo: String
+    @State var name: String = ""
+    @State var emailAddress: String = ""
+    @State var password: String = ""
+    @State var passwordTwo: String = ""
     @Environment(\.presentationMode) var mode
+    @ObservedObject var authVM = AuthViewModel()
+    @State var isHidden: Bool = true
     
     var body: some View {
         //MARK:-MainStack
@@ -82,7 +84,7 @@ struct SignUp: View {
                 HStack {
                     Text("Already have an account...?")
                     NavigationLink(
-                        destination: Login(emailAddress: $emailAddress, password: $password),
+                        destination: Login(emailAddress: emailAddress, password: password),
                         label: {
                             Text("Click here to Sign In")
                         })
@@ -92,7 +94,7 @@ struct SignUp: View {
         
                 
                 //MARK:- forgot password button
-                //                if !hidden {
+                                if !isHidden {
                 VStack {
                     NavigationLink(
                         destination: Text("Forgot pass"),
@@ -104,16 +106,21 @@ struct SignUp: View {
                         .frame(height: 10, alignment: .center)
                 }
                 .padding(.top, -60)
-                //                }
+                                }
                 
    
                 
                 //MARK:- ACTION BUTTONS
                 VStack(spacing: 10) {
                     
-                    //MARK:-Sign in Button
+                    //MARK:-registration Button
                     CustomSignInButton(imageName: "envelope", message: "Continue with Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
-                        //
+                        //registration
+//                        guard name.isEmpty, emailAddress.isEmpty, password.isEmpty, passwordTwo.isEmpty else {
+//                            return isHidden = false
+//
+//                        }
+                        authVM.register(email: emailAddress, name: name, password: password, passwordTwo: passwordTwo)
                     })
                     
                     //MARK:- Apple Button
@@ -142,6 +149,6 @@ struct SignUp: View {
 
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp(name: .constant(""), emailAddress: .constant(""), password: .constant(""), passwordTwo: .constant(""))
+        SignUp()
     }
 }

@@ -9,9 +9,10 @@ import SwiftUI
 import AuthenticationServices
 
 struct Login: View {
-    @Binding var emailAddress: String
-    @Binding var password: String
+    @State var emailAddress: String = ""
+    @State var password: String = ""
     //    @State var hidden: Bool = true
+    @ObservedObject var authVM = AuthViewModel()
     
     var body: some View {
         //MARK:-MainStack
@@ -28,7 +29,7 @@ struct Login: View {
                             .frame(width: Constants.screenSize.width, height: Constants.screenSize.height / 4, alignment: .top)
                     }
                     
-                    
+                
                     //MARK:-Logo image
                     Image(systemName: Images.bubbleImage)
                         .resizable()
@@ -62,7 +63,7 @@ struct Login: View {
                 HStack {
                     Text("Don't have an account...?")
                     NavigationLink(
-                        destination: SignUp(name: .constant(""), emailAddress: $emailAddress, password: $password, passwordTwo: $password )
+                        destination: SignUp()
                         ,
                         label: {
                             Text("Click here to Sign Up")
@@ -92,6 +93,7 @@ struct Login: View {
                     //MARK:-Sign in Button
                     CustomSignInButton(imageName: "person", message: "Continue with Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
                         //
+                        authVM.login()
                     })
                     
                     //MARK:- Apple Button
@@ -118,7 +120,7 @@ struct Login: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login(emailAddress: .constant(""), password: .constant(""))
+        Login()
     }
 }
 
