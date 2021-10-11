@@ -8,7 +8,8 @@
 import Foundation
 import Firebase
 
-struct UsersManager {
+class UsersManager: ObservableObject {
+    @Published var didAuthenticate = false
     let firestore = Firestore.firestore().collection("users")
     func createUserWith(user: UserProfile) {
         
@@ -17,7 +18,7 @@ struct UsersManager {
             if let _ = error {
                 print(error?.localizedDescription ?? "")
             }
-            
+            self.didAuthenticate = true
             print("Suscessfully Created Database User \(user.name)")
         }
     }

@@ -54,6 +54,7 @@
 		E8334E6A2706988A00BEEBDD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E8334E692706988A00BEEBDD /* FirebaseMessaging */; };
 		E8334E6C2706988A00BEEBDD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E8334E6B2706988A00BEEBDD /* FirebaseStorage */; };
 		E83AC75027133AE400A9EF9E /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83AC74F27133AE400A9EF9E /* UsersManager.swift */; };
+		E83AC7522713ABFE00A9EF9E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83AC7512713ABFE00A9EF9E /* StorageManager.swift */; };
 		E84FDFF1271325F00001C1A5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF0271325F00001C1A5 /* UserProfile.swift */; };
 		E84FDFF4271327540001C1A5 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF3271327540001C1A5 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		E8334E5E2706975F00BEEBDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E83AC74F27133AE400A9EF9E /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
+		E83AC7512713ABFE00A9EF9E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E84FDFF0271325F00001C1A5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E84FDFF3271327540001C1A5 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				E83AC74F27133AE400A9EF9E /* UsersManager.swift */,
+				E83AC7512713ABFE00A9EF9E /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				03D72C4026E806D900B9F915 /* HomeView.swift in Sources */,
 				0326F2B626F7C9920095C929 /* ChatViewModel.swift in Sources */,
 				E84FDFF4271327540001C1A5 /* AuthViewModel.swift in Sources */,
+				E83AC7522713ABFE00A9EF9E /* StorageManager.swift in Sources */,
 				E83AC75027133AE400A9EF9E /* UsersManager.swift in Sources */,
 				0324956726E6780800F629B3 /* Login.swift in Sources */,
 				03D72C3E26E806D000B9F915 /* ChatView.swift in Sources */,

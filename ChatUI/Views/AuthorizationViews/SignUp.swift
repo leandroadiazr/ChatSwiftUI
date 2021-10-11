@@ -19,10 +19,12 @@ struct SignUp: View {
     @State private var imagePickerPresented = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image? //  = Image(systemName: "person")
+    @ObservedObject var userManager = UsersManager()
+    
     
     var body: some View {
         //MARK:-MainStack
-        
+         
         NavigationView {
             VStack(spacing: 50) {
                 //MARK:- Images and Top Title
@@ -50,10 +52,11 @@ struct SignUp: View {
                 VStack {
                     CustomTitle(message: "Join Connect, It's Easy...!")
                 }
-                .padding(-10)
+                .padding(.top, -80)
                 
                 
                 //MARK:- TEXT FIELDS
+                
                 VStack(alignment: .leading) {
                     CustomFieldWithBorder(title: "name", placeholder: "name", target: $name)
                     CustomFieldWithBorder(title: "email", placeholder: "email address", target: $emailAddress)
@@ -72,7 +75,7 @@ struct SignUp: View {
                 }
                 .frame(width: Constants.screenSize.width)
                 .font(.body)
-                .padding(.horizontal)
+                .padding(.horizontal, 1)
                 VStack {
                     Divider()
                         .frame(width: Constants.screenSize.width / 1.1, height: 5)
@@ -90,7 +93,7 @@ struct SignUp: View {
                             Text("Click here to Sign In")
                         })
                 }
-                .padding(.top,-70)
+                .padding(.top,-75)
                 
                 
                 
@@ -117,11 +120,19 @@ struct SignUp: View {
                     //MARK:-registration Button
                     CustomSignInButton(imageName: "envelope", message: "Continue with Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
                         //registration
-                        //                        guard name.isEmpty, emailAddress.isEmpty, password.isEmpty, passwordTwo.isEmpty else {
-                        //                            return isHidden = false
-                        //
-                        //                        }
-                        authVM.register(email: emailAddress, name: name, password: password, passwordTwo: passwordTwo)
+                        guard !name.isEmpty, !emailAddress.isEmpty, !password.isEmpty, !passwordTwo.isEmpty else {
+                            print("empty")
+                            return isHidden = false
+                        }
+                        
+                        guard let profileImage = selectedImage else {
+                            return print("select image to upload i")
+                        }
+                        
+                        
+                        authVM.register(email: emailAddress, name: name, password: password, passwordTwo: passwordTwo, userProfileImage: profileImage)
+                        
+                        return print("sucess")
                     })
                     
                     //MARK:- Apple Button
@@ -143,7 +154,13 @@ struct SignUp: View {
                 //                Spacer()
             }//End MainStack
             .padding(.top, -80)
+            
         }
+        NavigationLink (
+            destination: HomeView(),
+            isActive: $userManager.didAuthenticate,
+            label: {}
+        )
     }
     
 }
@@ -172,20 +189,16 @@ struct UserProfileLogo: View {
                 //select image action
                 action()
             } label: {
-                
                 if let profileImage = profileImage {
                 ProfileImageView(imageName: profileImage, frameWidth: 120, frameHeight: 120)
                         .offset(y: -70)
                 } else {
-                    
                     Image(systemName: Images.bubbleImage)
                         .resizable()
                         .frame(width: 120, height: 100, alignment: .center)
                         .foregroundColor(.green)
                         .offset(y: -70)
                 }
-                
-                
             }
             .sheet(isPresented: $imagePickerPresented, onDismiss: loadSelectedImage) {
                 SwiftUIImagePicker(image: $selectedImage)

@@ -135,7 +135,7 @@ struct CustomFieldWithBorder: View {
             Text(title.uppercased())
                 .bold()
             TextField("Enter your \(placeholder)", text: $target)
-                .frame(width: Constants.screenSize.width / 1.1, alignment: .center)
+                .frame(width: Constants.screenSize.width / 1.1)
             Divider()
                 .frame(width: Constants.screenSize.width / 1.1, height: 5)
                 .background(Color.green)
