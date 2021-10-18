@@ -12,9 +12,17 @@ import SwiftUI
 
 
 class AuthViewModel: ObservableObject {
-    let storageManager = StorageManager()
+    private var storageManager: StorageManager
     let auth = Auth.auth()
-    let userManager = UsersManager()
+    private var userManager: UsersManager
+    @Published var userSession: Auth
+    
+    init(userManager: UsersManager, storageManager: StorageManager, userSession: Auth) {
+        self.userManager = userManager
+        self.storageManager = storageManager
+        self.userSession = userSession
+        
+    }
     
     func login() {
         print("login now")
@@ -30,7 +38,7 @@ class AuthViewModel: ObservableObject {
             
             guard let data = result?.user else { return }
             
-            self.storageManager.uploadSingleImage(userProfileImage) { imageUrl in 
+            self.storageManager.uploadSingleImage(userProfileImage) { imageUrl in
                 let newUser = UserProfile(userID: data.uid, name: name, handler: "@\(name)", email: email, profileImage: imageUrl, userLocation: "asdf", userBio: "asdf", userStatus: "asdf")
                 self.userManager.createUserWith(user: newUser)
             }

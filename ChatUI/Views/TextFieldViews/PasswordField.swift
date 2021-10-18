@@ -13,7 +13,8 @@ struct PasswordField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(message.uppercased())
-                .bold()
+                .font(.subheadline)
+//                .bold()
             SecureField("Enter your password", text: $password)
 //                .frame(width: Constants.screenSize.width / 1.1, height: 40, alignment: .center)
            

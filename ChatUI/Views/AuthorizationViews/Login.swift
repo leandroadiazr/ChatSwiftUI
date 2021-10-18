@@ -9,10 +9,11 @@ import SwiftUI
 import AuthenticationServices
 
 struct Login: View {
+    @State private var showView = false
     @State var emailAddress: String = ""
     @State var password: String = ""
     //    @State var hidden: Bool = true
-    @ObservedObject var authVM = AuthViewModel()
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
         //MARK:-MainStack
@@ -29,7 +30,7 @@ struct Login: View {
                             .frame(width: Constants.screenSize.width, height: Constants.screenSize.height / 4, alignment: .top)
                     }
                     
-                
+                    
                     //MARK:-Logo image
                     Image(systemName: Images.bubbleImage)
                         .resizable()
@@ -62,12 +63,13 @@ struct Login: View {
                 
                 HStack {
                     Text("Don't have an account...?")
-                    NavigationLink(
-                        destination: SignUp()
-                        ,
-                        label: {
-                            Text("Click here to Sign Up")
-                        })
+                    Button("Click here to Sign Up") {
+                        showView.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showView, content: {
+                        SignUp()
+                    })
+                    .foregroundColor(.blue)
                 }
                 .padding(.top,-50)
                 

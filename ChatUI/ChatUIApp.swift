@@ -17,7 +17,8 @@ struct ChatUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignUp()
+            ContentView()
+                .environmentObject(AuthViewModel(userManager: UsersManager(), storageManager: StorageManager(), userSession: Auth.auth()))
 //            TabBarView()
         }
     }

@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Group {
+            if viewModel.userSession.currentUser == nil {
+                Login()
+            } else {
+                HomeView()
+            }
+        }
     }
 }
 

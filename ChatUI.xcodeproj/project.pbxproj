@@ -57,6 +57,7 @@
 		E83AC7522713ABFE00A9EF9E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83AC7512713ABFE00A9EF9E /* StorageManager.swift */; };
 		E84FDFF1271325F00001C1A5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF0271325F00001C1A5 /* UserProfile.swift */; };
 		E84FDFF4271327540001C1A5 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF3271327540001C1A5 /* AuthViewModel.swift */; };
+		E8FC3E00271B6C2300B99F17 /* UserProfileImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FC3DFF271B6C2300B99F17 /* UserProfileImageSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		E83AC7512713ABFE00A9EF9E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E84FDFF0271325F00001C1A5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E84FDFF3271327540001C1A5 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E8FC3DFF271B6C2300B99F17 /* UserProfileImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImageSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 			children = (
 				0324956626E6780800F629B3 /* Login.swift */,
 				0324956826E6781300F629B3 /* SignUp.swift */,
+				E8FC3DFF271B6C2300B99F17 /* UserProfileImageSelector.swift */,
 			);
 			path = AuthorizationViews;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				03835BD626EEBB8D002104C6 /* MessageView.swift in Sources */,
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
+				E8FC3E00271B6C2300B99F17 /* UserProfileImageSelector.swift in Sources */,
 				03FBD11926EC3F9B0028483D /* SearchBarView.swift in Sources */,
 				0326F2B126F7C5450095C929 /* CustomInputView.swift in Sources */,
 				03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */,
