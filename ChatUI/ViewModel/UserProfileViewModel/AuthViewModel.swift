@@ -28,6 +28,8 @@ class AuthViewModel: ObservableObject {
         print("login now")
     }
     
+//    func register(email: String, name: String, password: String, passwordTwo: String, userProfileImage: UIImage) {
+    
     func register(email: String, name: String, password: String, passwordTwo: String, userProfileImage: UIImage) {
         print("registering now \(email), \(name), \(password), \(passwordTwo), ")
         auth.createUser(withEmail: email, password: password) { result, error in

@@ -13,7 +13,7 @@ struct CustomSignInButton: View {
     var gradientColorOne: Color
     var gradientColorTwo: Color
     
-    var action: () -> Void?
+    var action: () -> ()
     
     var body: some View {
         Group{
@@ -22,11 +22,11 @@ struct CustomSignInButton: View {
             }, label: {
                 Image(systemName: imageName)
                 Text(message)
-                    .font(.title3)
+                    .font(.subheadline)
                     .bold()
             })
             .foregroundColor(.white)
-            .frame(width: 315, height: 40, alignment: .center)
+            .frame(width: 150, height: 40, alignment: .center)
             .background(LinearGradient(gradient: Gradient(colors: [gradientColorOne, gradientColorTwo]), startPoint: .leading, endPoint: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/) )
             .cornerRadius(8)
             .padding(2)

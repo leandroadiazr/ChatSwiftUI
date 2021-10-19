@@ -12,11 +12,11 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         Group {
-            if viewModel.userSession.currentUser == nil {
+//            if viewModel.userSession.currentUser == nil {
                 Login()
-            } else {
-                HomeView()
-            }
+//            } else {
+//                HomeView()
+//            }
         }
     }
 }

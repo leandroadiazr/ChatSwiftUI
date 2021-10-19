@@ -31,8 +31,8 @@ struct SignUp: View {
                 VStack(spacing: 50) {
                     //MARK:- Images and Top Title
                     ZStack {
-                        Color.white
-                            .edgesIgnoringSafeArea(.all)
+//                        Color.white
+//                            .edgesIgnoringSafeArea(.all)
                         VStack {
                             Image(Images.topBackground)
                                 .resizable()
@@ -41,13 +41,16 @@ struct SignUp: View {
                         
                         
                         //MARK:-Logo || Profile image || Button
-                        UserProfileImageSelector(imagePickerPresented: $imagePickerPresented, profileImage: $profileImage, selectedImage: $selectedImage, action: {
-                            imagePickerPresented.toggle()
-               
-                           return print("selecting profile image")
-                        })
+                        VStack {
+                            UserProfileImageSelector(imagePickerPresented: $imagePickerPresented, profileImage: $profileImage, selectedImage: $selectedImage, action: {
+                                imagePickerPresented.toggle()
+                   
+                               return print("selecting profile image")
+                            })
+                          
+                        }
                     }
-                    .padding(.top, -100)
+                    .padding(.top, -110)
                     
                     
                     //MARK:- WELCOME TITLE
@@ -104,16 +107,16 @@ struct SignUp: View {
                     //MARK:- forgot password button
                     if !isHidden {
                         VStack {
-                            NavigationLink(
-                                destination: Text("Forgot pass"),
-                                label: {
-                                    Text("Forgot password")
+//                            NavigationLink(
+//                                destination: Text("Forgot pass"),
+//                                label: {
+                                    Text("Please Check your input & Choose a Profile Image")
                                         .font(.footnote)
-                                        .foregroundColor(.red)
-                                })
-                                .frame(height: 10, alignment: .center)
+//                                })
                         }
-                        .padding(.top, -60)
+                        .frame(height: 10, alignment: .center)
+                        .foregroundColor(.red)
+                        .offset(y: -90)
                     }
                     
                     
@@ -122,33 +125,38 @@ struct SignUp: View {
                     VStack(spacing: 10) {
                         
                         //MARK:-registration Button
-                        CustomSignInButton(imageName: "envelope", message: "Continue with Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
-                            //registration
-                            guard !name.isEmpty, !emailAddress.isEmpty, !password.isEmpty, !passwordTwo.isEmpty else {
-                                print("empty")
-                                return isHidden = false
-                            }
-                            
-                            guard let profileImage = selectedImage else {
-                                return print("select image to upload i")
-                            }
-                            
-                            
-                            authVM.register(email: emailAddress, name: name, password: password, passwordTwo: passwordTwo, userProfileImage: profileImage)
-                            
-                            return print("sucess")
-                        })
+                        HStack {
+                            CustomSignInButton(imageName: "envelope", message: "Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
+                                //registration
+                                guard !name.isEmpty, !emailAddress.isEmpty, !password.isEmpty, !passwordTwo.isEmpty else {
+                                    print("empty")
+                                    isHidden = false
+                                   return
+                                }
+                                
+                                guard let profileImage = selectedImage else {
+                                    return print("select image to upload i")
+                                }
+                                
+                                
+                                authVM.register(email: emailAddress, name: name, password: password, passwordTwo: passwordTwo, userProfileImage: profileImage)
+                                
+                                return print("sucess")
+                            })
+                            //MARK:- Apple Button
+                            AppleButton(fullName: .constant(""), emailAddress: $emailAddress)
+                        }
                         
-                        //MARK:- Apple Button
-                        AppleButton(fullName: .constant(""), emailAddress: $emailAddress)
                         
                         //MARK:-FACEBOOK BUTTON
-                        CustomSignInButton(imageName: "person", message: "Continue with Facebook", gradientColorOne: .gray, gradientColorTwo: .blue) {
-                            //
-                        }
-                        // MARK:-  GOOGLE BUTTON
-                        CustomSignInButton(imageName: "person", message: "Continue with Google", gradientColorOne: .gray, gradientColorTwo: .red) {
-                            //
+                        HStack {
+                            CustomSignInButton(imageName: "person", message: "Facebook", gradientColorOne: .gray, gradientColorTwo: .blue) {
+                                //
+                            }
+                            // MARK:-  GOOGLE BUTTON
+                            CustomSignInButton(imageName: "person", message: "Google", gradientColorOne: .gray, gradientColorTwo: .red) {
+                                //
+                            }
                         }
                         
                         Spacer()

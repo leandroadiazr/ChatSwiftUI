@@ -11,14 +11,15 @@ struct PasswordField: View {
     var message: String
     @Binding var password: String
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(message.uppercased())
-                .font(.subheadline)
+        VStack {
+//            Text(message.uppercased())
+//                .font(.subheadline)
 //                .bold()
             SecureField("Enter your password", text: $password)
 //                .frame(width: Constants.screenSize.width / 1.1, height: 40, alignment: .center)
            
         }
+        .multilineTextAlignment(.leading)
     }
 }
 

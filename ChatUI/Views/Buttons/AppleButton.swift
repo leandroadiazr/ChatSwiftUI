@@ -24,7 +24,7 @@ struct AppleButton: View {
             }
             .font(.title3)
             .signInWithAppleButtonStyle(.black)
-            .frame(width: 315, height: 40, alignment: .center)
+            .frame(width: 150, height: 40, alignment: .center)
             .shadow(color: .gray, radius: 5.0, x: 0.0, y: 0.0)
         }
     }
