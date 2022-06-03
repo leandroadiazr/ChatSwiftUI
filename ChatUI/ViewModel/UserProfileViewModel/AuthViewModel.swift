@@ -10,10 +10,31 @@ import Firebase
 
 
 class AuthViewModel: ObservableObject {
+    @Published var credentials = Credentials()
+    @Published var showProgressView = false
+    
+    var service = Service.shared
     let auth = Auth.auth()
     let userManager = UsersManager()
     
-    func login() {
+    var loginDisabled: Bool {
+        credentials.email.isEmpty || credentials.password.isEmpty
+    }
+    
+    func login(completion: @escaping (Bool) -> Void) {
+        showProgressView = true
+        service.login(credentials: credentials) { [unowned self] (result: Result<Bool, Service.APIError>) in
+//            guard let self = self else { return }
+            showProgressView = false
+            
+            switch result {
+            case .success:
+                completion(true)
+            case .failure:
+                credentials = Credentials()
+            }
+            
+        }
         print("login now")
     }
     

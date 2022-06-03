@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct ChatUIApp: App {
+    @StateObject var authentication = Authentication()
     
     init() {
         FirebaseApp.configure()
@@ -17,8 +18,14 @@ struct ChatUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignUp()
-//            TabBarView()
+            if authentication.isValidated {
+//            SignUp()
+                            TabBarView()
+                    .environmentObject(authentication)
+            } else {
+                Login()
+                    .environmentObject(authentication)
+            }
         }
     }
 }

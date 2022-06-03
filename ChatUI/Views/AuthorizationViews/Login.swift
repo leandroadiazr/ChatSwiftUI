@@ -11,8 +11,18 @@ import AuthenticationServices
 struct Login: View {
     @State var emailAddress: String = ""
     @State var password: String = ""
-    //    @State var hidden: Bool = true
+    @State var hidden: Bool = true
+    
+    
     @ObservedObject var authVM = AuthViewModel()
+    @EnvironmentObject var authentication: Authentication
+    
+    private func login() {
+        authVM.login { success in
+            authentication.updateValidation(success: success)
+            
+        }
+    }
     
     var body: some View {
         //MARK:-MainStack
@@ -21,7 +31,7 @@ struct Login: View {
             VStack(spacing: 50) {
                 //MARK:- Images and Top Title
                 ZStack() {
-                    Color.white
+                    Color.clear
                         .edgesIgnoringSafeArea(.all)
                     VStack {
                         Image(Images.topBackground)
@@ -49,7 +59,7 @@ struct Login: View {
                 //MARK:- TEXT FIELDS
                 VStack(alignment: .leading)  {
                     CustomFieldWithBorder(title: "EMAIL ADDRESS", placeholder: "email address", target: $emailAddress)
-                    PasswordField(message: "Password", password: $password)
+                    PasswordField(message: "Password", password: $authVM.credentials.password)
                     Divider()
                         .frame(width: Constants.screenSize.width / 1.1, height: 5)
                         .background(Color.green)
@@ -73,7 +83,7 @@ struct Login: View {
                 
                 
                 //MARK:- forgot password button
-                //                if !hidden {
+            if !hidden {
                 NavigationLink(
                     destination: Text("Forgot pass"),
                     label: {
@@ -81,9 +91,10 @@ struct Login: View {
                             .font(.footnote)
                             .foregroundColor(.red)
                     })
+                    .hidden()
                     .frame(height: 20, alignment: .center)
                     .padding(-50)
-                //                }
+                                }
                 
                 
                 
@@ -93,8 +104,29 @@ struct Login: View {
                     //MARK:-Sign in Button
                     CustomSignInButton(imageName: "person", message: "Continue with Email", gradientColorOne: .gray, gradientColorTwo: .green, action: {
                         //
-                        authVM.login()
+                        if authVM.showProgressView {
+                            ProgressView("Working...")
+                        }
+                        
+//                        login()
+                        authVM.login { success in
+                            print(success)
+                            switch success {
+                            case true:
+                                authentication.updateValidation(success: success)
+                            case false:
+                                
+                                hidden = false
+                            }
+                            
+                          
+                            
+                        }
+//                        authVM.login()
+                        return nil
                     })
+                    
+                        .autocapitalization(.none)
                     
                     //MARK:- Apple Button
                     AppleButton(fullName: .constant(""), emailAddress: $emailAddress)

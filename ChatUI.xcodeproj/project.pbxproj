@@ -45,10 +45,13 @@
 		03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */; };
 		03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCDFC426E97EC600EA96C6 /* StatusViewModel.swift */; };
 		E8145CD326E8254E008D0FCF /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */; };
+		E828F2A1279612B300DAE4CD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828F2A0279612B300DAE4CD /* Authentication.swift */; };
 		E8334E5F2706975F00BEEBDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8334E5E2706975F00BEEBDD /* GoogleService-Info.plist */; };
 		E83AC75027133AE400A9EF9E /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83AC74F27133AE400A9EF9E /* UsersManager.swift */; };
 		E84FDFF1271325F00001C1A5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF0271325F00001C1A5 /* UserProfile.swift */; };
 		E84FDFF4271327540001C1A5 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FDFF3271327540001C1A5 /* AuthViewModel.swift */; };
+		E850C69B27960C4500E37E8F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E850C69A27960C4500E37E8F /* LocalService.swift */; };
+		E850C69D27960C7400E37E8F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E850C69C27960C7400E37E8F /* Credentials.swift */; };
 		E8FF86D82795E97600E4613C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E8FF86D72795E97600E4613C /* Kingfisher */; };
 		E8FF86DB2795EA3600E4613C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E8FF86DA2795EA3600E4613C /* FirebaseAnalytics */; };
 		E8FF86DD2795EA3600E4613C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E8FF86DC2795EA3600E4613C /* FirebaseAuth */; };
@@ -121,10 +124,13 @@
 		03FCDFC126E97C1500EA96C6 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
 		03FCDFC426E97EC600EA96C6 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		E8145CD226E8254E008D0FCF /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
+		E828F2A0279612B300DAE4CD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		E8334E5E2706975F00BEEBDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E83AC74F27133AE400A9EF9E /* UsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
 		E84FDFF0271325F00001C1A5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E84FDFF3271327540001C1A5 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E850C69A27960C4500E37E8F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		E850C69C27960C7400E37E8F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +237,7 @@
 			children = (
 				0326F2B326F7C8B00095C929 /* Messages.swift */,
 				E84FDFF0271325F00001C1A5 /* UserProfile.swift */,
+				E850C69C27960C7400E37E8F /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 		0324956326E677BB00F629B3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E828F29F2796129A00DAE4CD /* Authentication */,
 				E84FDFF2271327380001C1A5 /* UserProfileViewModel */,
 				03FCDFC326E97EB200EA96C6 /* StatusViewModel */,
 				E8145CD126E82533008D0FCF /* SettingsViewModel */,
@@ -422,6 +430,14 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		E828F29F2796129A00DAE4CD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E828F2A0279612B300DAE4CD /* Authentication.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		E8334E5D27068F8900BEEBDD /* ChatViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				E83AC74F27133AE400A9EF9E /* UsersManager.swift */,
+				E850C69A27960C4500E37E8F /* LocalService.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -593,6 +610,7 @@
 				0324956D26E69BBB00F629B3 /* ImageBtn.swift in Sources */,
 				03835BD426EEB35E002104C6 /* ChatBubble.swift in Sources */,
 				E84FDFF1271325F00001C1A5 /* UserProfile.swift in Sources */,
+				E850C69B27960C4500E37E8F /* LocalService.swift in Sources */,
 				E8145CD326E8254E008D0FCF /* SettingsCellViewModel.swift in Sources */,
 				0324956B26E67E5F00F629B3 /* Constants.swift in Sources */,
 				0324957226E6BB9D00F629B3 /* CustomSignInButton.swift in Sources */,
@@ -612,6 +630,7 @@
 				0324953926E677A600F629B3 /* ContentView.swift in Sources */,
 				03FCDFC026E9294800EA96C6 /* ProfileImageView.swift in Sources */,
 				0324953726E677A600F629B3 /* ChatUIApp.swift in Sources */,
+				E828F2A1279612B300DAE4CD /* Authentication.swift in Sources */,
 				03835BD626EEBB8D002104C6 /* MessageView.swift in Sources */,
 				0324957626E6BC7C00F629B3 /* CustomQuestionButton.swift in Sources */,
 				03D72C4426E8102800B9F915 /* SettingsViewCell.swift in Sources */,
@@ -619,6 +638,7 @@
 				0326F2B126F7C5450095C929 /* CustomInputView.swift in Sources */,
 				03D72C3626E8052E00B9F915 /* TabBarView.swift in Sources */,
 				03FCDFBD26E9276000EA96C6 /* ProfileView.swift in Sources */,
+				E850C69D27960C7400E37E8F /* Credentials.swift in Sources */,
 				03FCDFC526E97EC600EA96C6 /* StatusViewModel.swift in Sources */,
 				0324957026E6BB3D00F629B3 /* AppleButton.swift in Sources */,
 				03FCDFC226E97C1500EA96C6 /* StatusSelectorView.swift in Sources */,
