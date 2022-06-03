@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var authentication: Authentication
+    
     var body: some View {
         ZStack {
             Color(.systemGray5)
@@ -30,7 +32,9 @@ struct SettingsView: View {
                 .padding(.horizontal)
                 
                 ImageBtn(imageName: "", foregroundColor: .red, title: "Log Out", fontSize: .headline, backgroundColor: .white) {
-                    //
+                    //action
+                    authentication.updateValidation(success: false)
+                    
                 }
             }
             //            .padding()
